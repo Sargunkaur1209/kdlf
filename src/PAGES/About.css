@@ -1,0 +1,99 @@
+/* About Page Container */
+.about-container {
+  background: transparent; /* page background handled globally */
+  color: var(--text);
+  padding: 48px 20px;
+  font-family: Inter, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.about-hero {
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto 40px;
+}
+.about-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--accent);
+  text-transform: none;
+  letter-spacing: 0.6px;
+}
+.about-subtitle {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+/* Content Section */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Group Photo */
+.about-group-photo {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(31,41,51,0.06);
+  transition: transform 0.28s ease;
+}
+.about-group-photo:hover {
+  transform: translateY(-6px);
+}
+
+/* Mission Section */
+.about-mission {
+  flex: 1;
+  min-width: 260px;
+  background: var(--surface);
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+.about-mission h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: var(--accent);
+  position: relative;
+}
+.about-mission h2::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 6px;
+}
+.about-mission p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-mission h2::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 600px) {
+  .about-title {
+    font-size: 2.2rem;
+  }
+  .about-subtitle {
+    font-size: 1rem;
+  }
+}

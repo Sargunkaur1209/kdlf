@@ -1,0 +1,163 @@
+/* Main Header Nav */
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  /* Softer, lighter charcoal to reduce "all-black" feel */
+  background: linear-gradient(180deg, #343434, #2a2a2a);
+  color: #f7f7f7;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* Reduced shadow for a softer elevated look */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+/* --- Logo Container and Text Styles --- */
+.LogoContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between logo image and text */
+    cursor: pointer;
+}
+
+/* Logo Image */
+.Img {
+  height: 56px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.28s ease-in-out;
+  /* lighter glow accent */
+  filter: drop-shadow(0 0 4px rgba(233, 185, 41, 0.28));
+}
+.Img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(233, 185, 41, 0.7));
+}
+
+/* Logo Text (Golden Color) */
+.LogoText {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #e9b929; /* Vibrant Golden Color */
+    letter-spacing: 1px;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+}
+
+/* Links Container */
+.Links {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Increased gap for better spacing */
+}
+
+/* Default Nav Links */
+.links {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s, transform 0.2s;
+}
+
+/* Underline effect on hover */
+.links::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e9b929; /* Accent color */
+    transition: width 0.4s ease;
+}
+
+.links:hover {
+  color: #e9b929;
+  transform: translateY(-1px);
+}
+
+.links:hover::after {
+    width: 100%;
+}
+
+/* --- Login & Signup Button Redesign --- */
+.LogSin {
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  /* softer baseline shadow */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.LogSin:first-of-type { /* Login - Outline/Ghost button */
+  background: rgba(233,185,41,0.06);
+  border: 1.5px solid rgba(233,185,41,0.95);
+  color: #ffea99;
+}
+.LogSin:first-of-type:hover {
+  background: rgba(233,185,41,0.18);
+  color: #1a1919; /* readable on light gold */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(233, 185, 41, 0.28);
+}
+
+.LogSin:last-of-type { /* Signup - Solid Primary button */
+  background: linear-gradient(90deg, #ffd66b 10%, #e9b929 90%);
+  border: 1px solid rgba(233,185,41,0.95);
+  color: #1a1919;
+}
+.LogSin:last-of-type:hover {
+  background: linear-gradient(90deg, #f4c84a 10%, #d4a625 90%);
+  border-color: #d4a625;
+  color: #1a1919;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(233, 185, 41, 0.28);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .Links {
+    gap: 20px;
+  }
+  .links, .LogSin {
+    font-size: 0.95rem;
+  }
+  .Header {
+    padding: 15px 30px;
+  }
+  .LogoText {
+      font-size: 1.2rem;
+  }
+}
+@media (max-width: 700px) {
+  .Header {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+  .Img {
+      height: 50px;
+  }
+  .LogoText {
+      font-size: 1.1rem;
+  }
+  .Links {
+    gap: 10px 15px; /* Adjust spacing when wrapping */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .LogSin {
+      padding: 8px 15px;
+  }
+}

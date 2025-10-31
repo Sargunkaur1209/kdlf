@@ -1,0 +1,169 @@
+/*
+  Theme Colors:
+  Primary Background: #111 (Very Dark Gray/Black)
+  Text/Content Background: #f5f5f5 (Off-White/Light Gray)
+*/
+
+/* --- Global Container and Typography --- */
+.HeroSignup {
+    min-height: 100vh;
+    background: transparent;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    overflow-x: hidden;
+}
+
+/* --- Marquee Text Styles (Using specific class names from Signup.jsx) --- */
+.MovingTextSin, .SinMovingText2 {
+    width: 100%;
+    /* Requested marquee look (increased size) */
+    font-size: 28px;
+    padding: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-image: linear-gradient(to right, rgb(233, 111, 41), white, rgb(233, 111, 41));
+    color: black;
+    font-weight: bolder;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(31,41,51,0.04);
+}
+
+.MovingTextSin marquee, .SinMovingText2 marquee {
+    /* Ensures the <pre> content is handled correctly inside marquee */
+    display: inline-block; 
+}
+
+/* --- Main Signup Content Layout (Image + Form) --- */
+.Signup_Img {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    width: 92%;
+    margin: 36px auto;
+    padding: 16px;
+    gap: 36px; /* Space between form and image */
+}
+
+/* --- Signup Form Card --- */
+.signup {
+    background: var(--surface);
+    color: var(--text);
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+}
+
+.SinHeading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.SinSubHeading {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* --- Form Elements --- */
+.signup label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.SinBox {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(31,41,51,0.06);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.18s, box-shadow 0.18s;
+    outline: none;
+    height: 44px;
+    box-sizing: border-box;
+}
+
+.SinBox:focus {
+    border-color: #111;
+    box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.2);
+}
+
+.SinButton {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, var(--accent) 60%, #fff 100%);
+    color: var(--text);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.12s ease;
+}
+.SinButton:hover { transform: translateY(-3px); }
+
+.SinButton:active {
+    transform: translateY(0);
+}
+
+
+/* --- Khanda Image Styles (Shared with Login) --- */
+.KhandaImg {
+    max-width: 350px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 20px rgba(31,41,51,0.06));
+    opacity: 0.95;
+    transition: opacity 0.25s ease, transform 0.18s ease;
+}
+
+.KhandaImg:hover { opacity: 1; transform: translateY(-4px); }
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .Signup_Img {
+        flex-direction: column; /* Stack image and form vertically */
+        width: 95%;
+        padding: 0;
+        gap: 30px;
+    }
+
+    .KhandaImg {
+        max-width: 250px; /* Reduce size on tablets */
+        order: -1; /* Place the image above the form on smaller screens */
+    }
+
+    .signup {
+        max-width: 100%;
+        padding: 30px 25px;
+    }
+
+    .SinHeading {
+        font-size: 1.8rem;
+    }
+
+    .SinSubHeading {
+        font-size: 1.2rem;
+    }
+
+    .MovingTextSin, .SinMovingText2 {
+        font-size: 20px;
+        padding: 12px 0;
+    }
+}

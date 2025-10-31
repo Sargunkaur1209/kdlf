@@ -1,0 +1,103 @@
+/* Learning page - updated to theme variables and lighter surfaces */
+.learning-container {
+  background: transparent;
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: 36px;
+}
+
+.learning-hero {
+  text-align: center;
+  padding: 64px 18px 48px;
+}
+
+.learning-khanda {
+  max-width: 96px;
+  height: auto;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 4px 18px rgba(31,41,51,0.06));
+}
+
+.learning-title {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.learning-subtitle {
+  font-size: 1.05rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.learning-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+}
+
+.learning-section {
+  background: var(--surface);
+  color: var(--text);
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.learning-section:hover {
+  transform: translateY(-6px);
+}
+
+.learning-section h2 {
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(0,0,0,0.04);
+  padding-bottom: 8px;
+  font-weight: 600;
+}
+
+.learning-section p {
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.learning-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.learning-list li { margin-bottom: 10px; }
+
+.learning-list a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  display: block;
+  padding: 6px 0;
+  border-radius: 4px;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.learning-list a:hover {
+  background-color: #f4f4f4;
+  color: var(--text);
+  padding-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .learning-hero { padding: 56px 12px 36px; }
+  .learning-title { font-size: 1.8rem; }
+  .learning-subtitle { font-size: 1rem; }
+  .learning-content { padding: 20px 12px; grid-template-columns: 1fr; }
+  .learning-section { padding: 18px; }
+}

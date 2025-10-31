@@ -1,0 +1,252 @@
+
+/* ================================
+   styles.css
+   ================================ */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Container */
+.page-container {
+  min-height: 100vh;
+  background: transparent; /* use page-level background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* Home Page Styles */
+.content-wrapper {
+  max-width: 48rem;
+  width: 100%;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.main-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .buttons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.event-button {
+  background: var(--surface);
+  border-radius: 1rem;
+  box-shadow: var(--card-shadow);
+  padding: 1.6rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.event-button:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.button-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-wrapper {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.ongoing-icon {
+  background-color: rgba(233,185,41,0.12);
+}
+
+.ongoing-button:hover .ongoing-icon {
+  background-color: rgba(233,185,41,0.18);
+}
+.upcoming-icon {
+  background-color: rgba(233,111,41,0.08);
+}
+
+.upcoming-button:hover .upcoming-icon {
+  background-color: rgba(233,111,41,0.12);
+}
+.icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.ongoing-icon .icon {
+  color: var(--accent);
+}
+
+.upcoming-icon .icon {
+  color: var(--accent);
+}
+
+.button-desc {
+  color: var(--muted);
+}
+
+/* Table Page Styles */
+.table-container {
+  max-width: 72rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.back-button {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: none;
+  color: #374151;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table-header {
+  background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
+  padding: 1.2rem 1rem;
+}
+
+.table-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.events-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.events-table thead {
+  background-color: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.events-table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.events-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.events-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.events-table td {
+  padding: 1rem 1.5rem;
+  color: #4b5563;
+}
+
+.event-name {
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-ongoing {
+  background-color: rgba(233,185,41,0.12);
+  color: #7a4f03; /* darker warm tone */
+}
+
+.status-upcoming {
+  background-color: rgba(233,111,41,0.08);
+  color: #7a4f03;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .table-title {
+    font-size: 1.5rem;
+  }
+  
+  .events-table th,
+  .events-table td {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}

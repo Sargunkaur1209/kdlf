@@ -1,0 +1,62 @@
+/* Minimal global layout rules to prevent whitespace around footer */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, 'Segoe UI', Roboto, system-ui, -apple-system, 'Helvetica Neue', Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Theme variables: softer, less black overall while keeping gold accent */
+:root{
+  --bg: #f4f6f8;           /* page background (soft light) */
+  --surface: #ffffff;      /* cards / panels */
+  --muted: #6b7280;        /* muted text */
+  --text: #1f2933;         /* primary text (dark but not black) */
+  --accent: #e9b929;       /* gold accent */
+  --accent-soft: #fff4d9;  /* soft gold background */
+  --card-shadow: 0 6px 22px rgba(31,41,51,0.06);
+}
+
+.app-root {
+  min-height: 100vh; /* ensure root fills viewport */
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page-main {
+  flex: 1 0 auto; /* grow to fill available space so footer hugs content */
+  /* small bottom padding prevents margin-collapse from the last child creating a visible gap */
+  padding-bottom: 1px;
+}
+
+/* Prevent any last-child bottom margin inside page-main from creating gaps */
+.page-main > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Global button helper */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* links */
+a { color: var(--accent); }
+a:hover{ color: #d4a625 }
+
+/* small utility */
+.card {
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
+  border-radius: 12px;
+}
