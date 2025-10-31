@@ -7,7 +7,7 @@ import "../PAGES/Home.css";
 
 import Komalpreet from "../assets/Komalpreet.jpg";
 import Meher from "../assets/Meher.jpg";
-import Satinderjeet from "../assets/SatinderJeet.jpg";
+import Satinderjeet from "../assets/Satinderjeet.jpg";
 import Tejasveer from "../assets/Tejasveer.jpg";
 import Gurnadar from "../assets/Gurnadar.jpg";
 import Rs1313 from "../assets/Rs1313.jpg";
